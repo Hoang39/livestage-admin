@@ -3,10 +3,57 @@
     justify-content: center;
     align-items: center;
     height: 100vh;
+    background-size: cover;
+    background-position: center;
+    background-repeat: no-repeat;
+}
+
+.login-overlay {
+    position: absolute;
+    inset: 0;
+    background-color: rgba(0, 0, 0, 0.4);
+}
+
+.login-form-container {
+    position: relative;
+    z-index: 10;
+    max-width: 28rem;
+    width: 100%;
+    margin: 0 1rem;
+}
+
+.login-header {
+    text-align: center;
+}
+
+.login-logo-container {
+    margin: 0 auto;
+    height: 5.5rem;
+    width: 5.5rem;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    margin-bottom: 1rem;
+}
+
+.login-logo {
+    height: 100%;
+}
+
+.login-title {
+    font-size: 1.5rem;
+    font-weight: 600;
+    color: #111827;
 }
 
 .login-form {
-    max-width: 300px;
+    background-color: rgba(255, 255, 255, 0.95);
+    backdrop-filter: blur(4px);
+    border-radius: 1rem;
+    box-shadow: 0 25px 50px -12px rgba(0, 0, 0, 0.25);
+    padding: 2rem;
+    display: flex;
+    flex-direction: column;
 }
 .login-form-forgot {
     float: right;

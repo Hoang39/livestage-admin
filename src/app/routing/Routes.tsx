@@ -5,6 +5,7 @@ import { Login } from "@modules/Login";
 import { routeConfig } from "@configs/routeConfig";
 import { AuthRoutes } from "./AuthRoutes";
 import { PrivateRoutes } from "./PrivateRoutes";
+import NotFound from "@/components/not-found";
 
 const Routes: FC = () => {
     return (
@@ -49,8 +50,7 @@ const Routes: FC = () => {
             <Route path="auth" element={<AuthRoutes />}>
                 <Route path="login" element={<Login />} />
             </Route>
-            <Route path="/error" element={<div>Error page</div>} />
-            <Route path="*" element={<div>Not found</div>} />
+            <Route path="*" element={<NotFound />} />
         </Router>
     );
 };

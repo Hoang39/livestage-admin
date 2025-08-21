@@ -8,6 +8,8 @@ import { authStorage } from "@services/authStorage";
 import { defaultPath } from "@configs/routeConfig";
 import { useNavigate } from "react-router";
 import { useAppStore } from "@/hooks/useAppStore";
+import logo from "@/assets/login_bg.jpg";
+import account from "@/assets/account.svg";
 
 export const Login = () => {
     const navigate = useNavigate();
@@ -49,73 +51,77 @@ export const Login = () => {
     };
 
     return (
-        <div className="login">
-            <Form
-                name="normal_login"
-                className="login-form"
-                form={form}
-                initialValues={{
-                    remember: true,
-                    username: "dev",
-                    password: "123",
-                }}
-                onFinish={onFinish}
-            >
-                <Form.Item
-                    name="username"
-                    rules={[
-                        {
-                            required: true,
-                            message: "Please input your Username!",
-                        },
-                    ]}
+        <div className="login" style={{ backgroundImage: `url(${logo})` }}>
+            <div className="login-overlay"></div>
+            <div className="login-form-container">
+                <Form
+                    name="normal_login"
+                    className="login-form"
+                    form={form}
+                    initialValues={{
+                        remember: true,
+                        username: "dev",
+                        password: "123",
+                    }}
+                    onFinish={onFinish}
                 >
-                    <Input
-                        prefix={
-                            <UserOutlined className="site-form-item-icon" />
-                        }
-                        placeholder="Username"
-                    />
-                </Form.Item>
-                <Form.Item
-                    name="password"
-                    rules={[
-                        {
-                            required: true,
-                            message: "Please input your Password!",
-                        },
-                    ]}
-                >
-                    <Input
-                        prefix={
-                            <LockOutlined className="site-form-item-icon" />
-                        }
-                        type="password"
-                        placeholder="Password"
-                    />
-                </Form.Item>
-                {/* <Form.Item>
-                    <Form.Item name='remember' valuePropName='checked' noStyle>
-                        <Checkbox>Remember me</Checkbox>
+                    <div className="login-header">
+                        <div className="login-logo-container">
+                            <img
+                                src={account}
+                                alt="Account icon"
+                                className="login-logo"
+                            />
+                        </div>
+                        <h2 className="login-title">Login Account</h2>
+                    </div>
+
+                    <Form.Item
+                        name="username"
+                        rules={[
+                            {
+                                required: true,
+                                message: "Please input your Username!",
+                            },
+                        ]}
+                    >
+                        <Input
+                            prefix={
+                                <UserOutlined className="site-form-item-icon" />
+                            }
+                            placeholder="Username"
+                        />
+                    </Form.Item>
+                    <Form.Item
+                        name="password"
+                        rules={[
+                            {
+                                required: true,
+                                message: "Please input your Password!",
+                            },
+                        ]}
+                    >
+                        <Input
+                            prefix={
+                                <LockOutlined className="site-form-item-icon" />
+                            }
+                            type="password"
+                            placeholder="Password"
+                        />
                     </Form.Item>
 
-                    <a className='login-form-forgot' href=''>
-                        Forgot password
-                    </a>
-                </Form.Item> */}
-
-                <Form.Item>
-                    <Button
-                        loading={isLoading}
-                        type="primary"
-                        htmlType="submit"
-                        className="login-form-button"
-                    >
-                        Login
-                    </Button>
-                    {/* Or <a href=''>register now!</a> */}
-                </Form.Item>
-            </Form>
+                    <Form.Item>
+                        <Button
+                            loading={isLoading}
+                            type="primary"
+                            htmlType="submit"
+                            className="login-form-button"
+                        >
+                            Login
+                        </Button>
+                    </Form.Item>
+                </Form>
+            </div>
         </div>
     );
 };
