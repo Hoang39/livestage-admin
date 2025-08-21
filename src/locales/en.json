@@ -7,7 +7,8 @@
         "different": "{{path}} must be {{type}} than {{path2}}.",
         "regex": "{{path}} must include letters, numbers, and special characters.",
         "email": "Invalid email address.",
-        "confirmPassword": "Password must match."
+        "confirmPassword": "Password must match.",
+        "wrongPassword": "Wrong password!"
     },
 
     "Route": {

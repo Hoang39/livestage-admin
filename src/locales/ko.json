@@ -7,7 +7,8 @@
         "different": "{path}는 {path2}보다 {type}해야 합니다.",
         "regex": "{path}는 문자, 숫자, 특수 문자를 포함해야 합니다.",
         "email": "잘못된 이메일 주소입니다.",
-        "confirmPassword": "비밀번호는 일치해야 합니다."
+        "confirmPassword": "비밀번호는 일치해야 합니다.",
+        "wrongPassword": "잘못된 비밀번호입니다!"
     },
 
     "Route": {

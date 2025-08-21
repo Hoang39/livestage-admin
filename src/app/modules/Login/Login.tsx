@@ -10,8 +10,12 @@ import { useNavigate } from "react-router";
 import { useAppStore } from "@/hooks/useAppStore";
 import logo from "@/assets/login_bg.jpg";
 import account from "@/assets/account.svg";
+import { useNotificationContext } from "@/app/context/notification";
+import { useTranslation } from "react-i18next";
 
 export const Login = () => {
+    const { t } = useTranslation("Validation");
+
     const navigate = useNavigate();
 
     const [isLoading, setIsLoading] = useState(false);
@@ -19,6 +23,8 @@ export const Login = () => {
     const [form] = Form.useForm();
 
     const { setUserInfo } = useAppStore((state) => state);
+
+    const { openNotification } = useNotificationContext();
 
     const onFinish = async (values: unknown) => {
         console.log("🚀 ~ onFinish ~ values:", values);
@@ -45,6 +51,11 @@ export const Login = () => {
             }
         } catch (error) {
             console.error("🚀 ~ onFinish ~ error", error);
+
+            openNotification("error", t("wrongPassword"), undefined, {
+                showProgress: true,
+                pauseOnHover: true,
+            });
         } finally {
             setIsLoading(false);
         }

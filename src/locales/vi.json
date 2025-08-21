@@ -7,7 +7,8 @@
         "different": "{path} phải là {type} lớn hơn {path2}.",
         "regex": "{path} phải bao gồm các chữ cái, số và ký tự đặc biệt.",
         "email": "Địa chỉ email không hợp lệ.",
-        "confirmPassword": "Mật khẩu phải khớp."
+        "confirmPassword": "Mật khẩu phải khớp.",
+        "wrongPassword": "Mật khẩu sai!"
     },
 
     "Route": {
