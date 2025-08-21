@@ -1,0 +1,557 @@
+.chat-content .ant-card-body {
+    overflow-y: auto;
+    background-color: #f1f1f1;
+    height: calc(100vh - 160px);
+}
+
+.chat-list {
+    transition: background-color 0.3s ease;
+    width: 36%;
+    height: calc(100vh - 160px);
+}
+
+.chat-list .ant-card-body {
+    height: calc(100% - 80px);
+    overflow-y: auto;
+}
+
+.chat-content {
+    width: 63%;
+    height: calc(100vh - 160px);
+}
+
+.strikethrough-text {
+    text-decoration: line-through;
+}
+
+.text-capitalize {
+    color: #a4a1a1;
+}
+
+input {
+    padding: 0 0 0 15px;
+    border-radius: 30px;
+    border: 1px solid rgba(0, 0, 0, 0.2);
+}
+
+.chat-wrapper {
+    position: absolute;
+    margin: 50px 20px 20px 20px;
+    inset: 0;
+    overflow: hidden;
+    display: flex;
+    gap: 12px;
+}
+
+.chat-history {
+    width: 30%;
+    max-width: 300px;
+    height: 100%;
+    display: flex;
+    flex-direction: column;
+    border: 1px solid #ddd;
+    overflow: hidden;
+}
+
+.chat-history-head {
+    padding: 10px;
+    display: flex;
+    flex-direction: column;
+    gap: 10px;
+    justify-content: center;
+    border-bottom: 1px solid #ddd;
+}
+
+.chat-search-history-input {
+    height: 25px;
+}
+
+.chat-history-list {
+    overflow-y: scroll;
+    flex: 1;
+}
+
+.chat-history-list-item {
+    cursor: pointer;
+}
+
+.chat-history-list-item:hover {
+    background-color: rgb(242, 242, 242);
+}
+
+.chat-history-item-avatar {
+    width: 40px;
+    height: 40px;
+    border-radius: 50%;
+}
+
+.chat-history-list-item-selected,
+.chat-history-list-item-selected:hover {
+    background-color: rgb(228, 216, 241);
+}
+
+.chat-history-item-urmsg {
+    background-color: red;
+    color: white;
+    border-radius: 50%;
+    width: 20px;
+    height: 20px;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}
+
+.chat-content {
+    display: flex;
+    flex: 1;
+    flex-direction: column;
+    border: 1px solid #ddd;
+    // overflow: hidden;
+}
+
+.chat-content-head {
+    // border-bottom: 1px solid #ddd;
+    padding: 6px;
+    // background-color: rgb(241, 224, 216);
+    display: flex;
+    gap: 12px;
+    align-items: center;
+}
+
+.chat-content-head-btn {
+    align-self: baseline;
+    margin-left: auto;
+    font-size: 18px;
+    cursor: pointer;
+    width: 40px;
+    height: 40px;
+    display: flex;
+    justify-content: center;
+    position: relative;
+}
+
+.chat-content-head-btn .options-menu {
+    top: 30px;
+    right: 10px;
+    display: none;
+    position: absolute;
+    background-color: #fff;
+    border: 1px solid #ddd;
+    border-radius: 8px;
+    padding: 6px;
+    z-index: 999999;
+}
+
+.chat-content-head-btn:hover .options-menu {
+    display: block;
+    font-size: 14px;
+}
+
+.chat-content-head-btn::after {
+    content: "";
+    width: 50px;
+    height: 100px;
+    position: absolute;
+    top: 0;
+    right: 0;
+    z-index: 0;
+}
+
+.chat-content-history {
+    display: flex;
+    flex-direction: column;
+    padding-bottom: 36px;
+}
+
+.chat-content-input {
+    border-top: 1px solid #ddd;
+    background-color: rgb(255, 255, 255);
+    padding: 10px;
+    position: absolute;
+    bottom: 0;
+    left: 0;
+    width: 100%;
+}
+
+.chat-content-input-container {
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    gap: 4px;
+}
+
+.chat-message-input {
+    padding: 4px 8px;
+    flex: 1;
+}
+
+.chat-content-input-reply {
+    background: white;
+    border-left: 4px solid #0084ff;
+    border-radius: 4px;
+    margin: 0 8px 6px 0;
+    padding: 2px 8px;
+    display: flex;
+    gap: 8px;
+    align-items: center;
+}
+
+.reply-msg-text {
+    position: relative;
+    padding: 1px 0;
+    border-radius: 10px;
+    min-width: max-content;
+    max-width: 70%;
+    word-break: break-all;
+}
+
+.reply-msg-text .msg-item-img {
+    width: 40px;
+    height: 40px;
+    border-radius: 4px;
+    border: 1px solid rgb(186, 186, 186);
+    margin-bottom: 0;
+}
+
+.msg {
+    position: relative;
+    padding: 2px 10px;
+    border-radius: 10px;
+    min-width: max-content;
+    max-width: 70%;
+    word-break: break-all;
+    background-color: #fff;
+}
+
+.reply-msg {
+    margin-bottom: 4px;
+    padding: 4px 8px;
+    background-color: #f1f0f0;
+    border-left: 4px solid #0084ff;
+    border-radius: 4px;
+    font-size: 12px;
+    cursor: pointer;
+}
+
+.reply-msg .reply-uname {
+    font-weight: bold;
+    color: #333;
+}
+
+.reply-msg .reply-content {
+    color: #666;
+    white-space: nowrap;
+    overflow: hidden;
+    text-overflow: ellipsis;
+}
+
+.msg.msg-link {
+    padding: 6px 10px;
+    border-radius: 10px;
+    max-width: 200px;
+    display: flex;
+    flex-direction: column;
+    gap: 3px;
+    border: 1px solid #ddd;
+}
+
+.msg-link .msg-link-title {
+    font-weight: 500;
+    overflow: hidden;
+    display: -webkit-box;
+    -webkit-box-orient: vertical;
+    -webkit-line-clamp: 1;
+}
+
+.msg-item-img {
+    height: 150px;
+    // width: 40px;
+    max-width: 100%;
+    object-fit: contain;
+    margin-bottom: 5px;
+}
+
+.msg-date {
+    font-size: 10px;
+    color: #a4a1a1;
+    font-style: italic;
+    text-align: right;
+    padding-top: 4px;
+}
+
+.msgMe .msg-date {
+    text-align: right;
+}
+
+.msgYou .msg-date {
+    text-align: left;
+}
+
+.msgMe,
+.msgYou {
+    position: relative;
+    display: flex;
+    gap: 6px;
+    padding: 4px 0;
+}
+
+.msgMe > div,
+.msgYou > div {
+    position: relative;
+}
+
+.msgYou .msg {
+    border: 1px solid #ddd;
+}
+
+.msgMe {
+    flex-direction: row-reverse;
+    justify-content: end;
+}
+
+.msgMe .msg {
+    background-color: rgb(218, 218, 255);
+    margin-left: auto;
+    margin-right: 0;
+}
+
+.msgMe > div::after {
+    content: "";
+    width: 80px;
+    height: 50px;
+    position: absolute;
+    right: 100%;
+    bottom: 0;
+}
+
+.msgYou > div::after {
+    content: "";
+    width: 80px;
+    height: 50px;
+    position: absolute;
+    left: 100%;
+    bottom: 0;
+}
+
+.msg-reactions {
+    position: absolute;
+    right: 0;
+    bottom: -8px;
+    display: flex;
+    gap: 2px;
+    justify-content: flex-end;
+    font-size: 12px;
+}
+
+.msg-reaction {
+    display: flex;
+    align-items: center;
+    gap: 2px;
+    padding: 2px 6px;
+    border-radius: 12px;
+    background-color: #f5f5f5;
+}
+
+.msg-reaction span {
+    line-height: 1;
+}
+
+.msg-actions {
+    display: none;
+    position: absolute;
+    bottom: 0;
+    gap: 4px;
+    z-index: 10;
+}
+
+.msgYou .msg-actions {
+    left: calc(100% + 4px);
+}
+
+.msgMe .msg-actions {
+    right: calc(100% + 4px);
+}
+
+.msgMe > div:hover .msg-actions,
+.msgYou > div:hover .msg-actions {
+    display: flex;
+}
+
+.msg-action-btn {
+    background-color: #f5f5f5;
+    border: none;
+    border-radius: 50%;
+    width: 24px;
+    height: 24px;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    cursor: pointer;
+    font-size: 14px;
+}
+
+.reaction-menu {
+    display: none;
+    position: absolute;
+    background-color: #fff;
+    border: 1px solid #ddd;
+    border-radius: 8px;
+    padding: 8px;
+    gap: 8px;
+    z-index: 10;
+}
+
+.msgMe .reaction-menu {
+    right: 30px;
+    bottom: 10px;
+}
+
+.msgYou .reaction-menu {
+    left: 30px;
+    bottom: 10px;
+}
+
+.reaction-menu.show {
+    display: flex !important;
+}
+
+.reaction-item {
+    cursor: pointer;
+    font-size: 16px;
+    padding: 0 4px;
+}
+
+.reaction-item:hover {
+    background: #f1f1f1;
+    border-radius: 50%;
+    margin: auto;
+}
+
+.options-menu {
+    display: none;
+    position: absolute;
+    background-color: #fff;
+    border: 1px solid #ddd;
+    border-radius: 8px;
+    padding: 6px;
+    z-index: 10;
+}
+
+.msgMe .options-menu {
+    right: 30px;
+    bottom: 10px;
+}
+
+.msgYou .options-menu {
+    left: 30px;
+    bottom: 10px;
+}
+
+.options-menu.show {
+    display: block;
+}
+
+.option-item {
+    min-width: max-content;
+    padding: 4px 8px;
+    cursor: pointer;
+}
+
+.option-item:hover {
+    background-color: #f5f5f5;
+}
+
+.highlight {
+    border: 2px solid #007bff;
+    animation: highlightAnimation 1s ease-in-out;
+}
+
+@keyframes highlightAnimation {
+    0% {
+        border-color: #ffffff;
+    }
+    50% {
+        border-color: #808080;
+    }
+    100% {
+        border-color: #ffffff;
+    }
+}
+
+.queryRow {
+    display: flex;
+    gap: 10px;
+    padding: 10px;
+}
+
+.information {
+    display: flex;
+    gap: 10px;
+}
+
+.dropdownList {
+    position: relative;
+}
+
+.dropdown-toggle {
+    background-color: #fff;
+    border: 1px solid #ddd;
+    padding: 5px 10px;
+    display: flex;
+    align-items: center;
+    gap: 5px;
+    cursor: pointer;
+}
+
+.truncateLabel {
+    max-width: 150px;
+    white-space: nowrap;
+    overflow: hidden;
+    text-overflow: ellipsis;
+}
+
+.caret {
+    border: 4px solid transparent;
+    border-top-color: #000;
+}
+
+.dropdown-menu {
+    display: none;
+    position: absolute;
+    background-color: #fff;
+    border: 1px solid #ddd;
+    border-radius: 4px;
+    list-style: none;
+    padding: 0;
+    margin: 0;
+    z-index: 10;
+}
+
+.dropdownList:hover .dropdown-menu {
+    display: block;
+}
+
+.dropdown-menu li {
+    padding: 5px 10px;
+    cursor: pointer;
+}
+
+.dropdown-menu li:hover {
+    background-color: #f5f5f5;
+}
+
+.btn {
+    padding: 5px 10px;
+    border: 1px solid #ddd;
+    background-color: #fff;
+    cursor: pointer;
+}
+
+.btn-sm {
+    padding: 3px 6px;
+    font-size: 12px;
+}
+
+.btn-default {
+    background-color: #f5f5f5;
+}
